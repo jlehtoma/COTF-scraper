@@ -8,7 +8,12 @@ urls <- c("https://www.justgiving.com/COTF2015BLI/",
           "https://www.justgiving.com/COTF2015BBR",
           "https://www.justgiving.com/COTF2015AR",
           "https://www.justgiving.com/COTF2015TNL/",
-          "https://www.justgiving.com/COTFRB")
+          "https://www.justgiving.com/COTFRB",
+          "https://www.justgiving.com/COTF2015TDK/",
+          "https://www.justgiving.com/COTF2015BCR/",
+          "https://www.justgiving.com/COTF2015IF/",
+          "https://www.justgiving.com/COTF2015BV/",
+          "https://www.justgiving.com/COTF2015AD/")
 
 scrape_data <- function(url) {
 
