@@ -12,6 +12,11 @@ sum_raised <- tarp_site %>%
   html_nodes(xpath="//div//p//span[@class='raised-so-far']") %>%
   html_text()
 
+target <- tarp_site %>% 
+  html_nodes(xpath="//div//p//em") %>%
+  extract2(1) %>%
+  html_text()
+
 n_donations <- tarp_site %>%
   html_nodes(xpath="//div//p//span[@class='number-of-donations']") %>%
   html_text() %>%
