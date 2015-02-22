@@ -16,6 +16,7 @@ target <- tarp_site %>%
   html_nodes(xpath="//div//p//em") %>%
   extract2(1) %>%
   html_text()
+target <- unlist(strsplit(target, "\\s+"))[4]
 
 n_donations <- tarp_site %>%
   html_nodes(xpath="//div//p//span[@class='number-of-donations']") %>%
