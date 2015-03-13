@@ -61,3 +61,16 @@ scrape_data <- function(url) {
 donations_data <- lapply(urls, scrape_data)
 # Bind data frames in the list into a single data frame
 donations_data <- bind_rows(donations_data)
+
+vanha<-donations_data
+
+library(stringr)
+vanha$pros<-str_split_fixed(vanha$perc_raised, "%",2)
+vanha$pros<-as.vector(vanha$pros[,1])
+vanha$pros<-as.numeric(vanha$pros)
+str(vanha$pros)
+
+library(ggplot2)
+c<-ggplot(vanha, aes(x = factor(team_name), y = pros,fill=factor(team_name))) + geom_bar(stat = "identity")
+c<- c+ coord_flip()+labs(title = "Champions of the Flyway 2015", x = "Team name", y="Percent raised")+guides(fill=FALSE)
+c+ theme_classic()
